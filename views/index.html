@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="google-adsense-account" content="ca-pub-2046002642158229" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>GIFBYME - A Free Online GIF Maker</title>
+    <meta
+      name="description"
+      content="Unlock your creativity with our online GIF maker! Easily craft animated GIFs, banners, and slideshows from a sequence of images. Upload frames to create a custom GIF or seamlessly merge and edit existing GIFs for a personalized touch"
+    />
+    <meta
+      name="keywords"
+      content="Free GIF maker,Online GIF Maker,Make a GIF,create gif,GIF generator,make gif online,GifByMe"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="GifByMe - Online Free GIF maker" />
+    <meta property="og:url" content="https://gifbyme.glitch.me" />
+    <meta
+      property="og:description"
+      content="Unlock your creativity with our online GIF maker! Easily craft animated GIFs, banners, and slideshows from a sequence of images. Upload frames to create a custom GIF or seamlessly merge and edit existing GIFs for a personalized touch"
+    />
+    <link rel="canonical" href="https://gifbyme.glitch.me" />
+    <link rel="stylesheet" type="text/css" href="gifbyme.css" />
+    <link rel="stylesheet" type="text/css" href="gifbyme2.css" />
+    <!-- adsense -->
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2046002642158229"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuid.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        /* font-family: 'Montserrat', sans-serif; */
+      }
+      /* Additional CSS styles for other elements on your website */
+    </style>
+    <style>
+      #uploadModal {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        z-index: 9999;
+      }
+      .disable-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.8);
+        z-index: 9998;
+        display: none;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+            minHeight: {
+              10: "10rem", // Define a custom minimum height class
+              20: "20rem", // Define a custom minimum height class
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <script></script>
+    <h1 style="text-align: center" class="text-3xl p-4">
+      Free Animated GIF Maker
+    </h1>
+    <div
+      id="content"
+      class="maker-content"
+      style="margin: auto; width: 100%; background-color: bisque"
+    >
+      <!-- ads -->
+      <aside
+        id="sidebar"
+        class="left-element"
+        style="background-color: blanchedalmond"
+      >
+        <div class="sky">
+          <div
+            id="gifbyme_300x600_1"
+            class="ads sidebar_ad"
+            data-google-query-id="CKDg2fjWn4IDFQI5KgodypQDIQ"
+          >
+            <div
+              id="google_ads_iframe_/147246189,21770999482/gifbyme_300x600_1_0__container__"
+              style="border: 0pt none"
+            >
+              <iframe
+                id="google_ads_iframe_/147246189,21770999482/gifbyme_300x600_1_0"
+                name="google_ads_iframe_/147246189,21770999482/gifbyme_300x600_1_0"
+                title="3rd party ad content"
+                width="300"
+                height="1200"
+                scrolling="no"
+                marginwidth="0"
+                marginheight="0"
+                frameborder="0"
+                role="region"
+                aria-label="Advertisement"
+                tabindex="0"
+                allow="attribution-reporting"
+                sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+                style="
+                  border: 0px;
+                  vertical-align: bottom;
+                  width: 300px;
+                  height: 1200px;
+                "
+                data-load-complete="true"
+                data-google-container-id="2"
+              >
+              </iframe>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="sky">
+          <div
+            id="gifbyme_300x600_2"
+            class="ads sidebar_ad"
+            data-google-query-id="CMeZ0O7Xn4IDFU4fewcdn9cDHg"
+          >
+            <div
+              id="google_ads_iframe_/147246189,21770999482/gifbyme_300x600_2_0__container__"
+              style="border: 0pt none"
+            >
+              <iframe
+                id="google_ads_iframe_/147246189,21770999482/gifbyme_300x600_2_0"
+                name="google_ads_iframe_/147246189,21770999482/gifbyme_300x600_2_0"
+                title="3rd party ad content"
+                width="300"
+                height="600"
+                scrolling="no"
+                marginwidth="0"
+                marginheight="0"
+                frameborder="0"
+                role="region"
+                aria-label="Advertisement"
+                tabindex="0"
+                allow="attribution-reporting"
+                sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+                style="
+                  border: 0px;
+                  vertical-align: bottom;
+                  width: 300px;
+                  height: 1200px;
+                "
+                data-load-complete="true"
+                data-google-container-id="3"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <div
+        id="main"
+        class="section"
+        style="margin: auto; background-color: cornsilk"
+      >
+        <div class="disable-overlay" id="disableOverlay"></div>
+        <div id="uploadModal"><h1 class="text-3xl">Processing...</h1></div>
+        <!-- one -->
+        <h2 class="mt-10 mb-2 text-2xl">1. Upload Images:</h2>
+        <h5 class="mb-10 text-sm">
+          — Each image should be under <b>1MB</b>, and the total size of all
+          images combined should not exceed <b>10MB</b>.
+        </h5>
+
+        <div
+          id="drop-area"
+          class="group relative px-10 py-8 mt-2 flex h-72 cursor-pointer flex-col items-center justify-center rounded-md border border-gray-300 bg-white shadow-sm transition-all hover:bg-gray-50"
+          style="min-height: 100px; width: 80%; margin: auto"
+        >
+          <div
+            class="absolute z-[3] flex h-full w-full flex-col items-center justify-center rounded-md px-10 transition-all bg-white opacity-100 hover:bg-gray-50"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewbox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="scale-100 h-7 w-7 text-gray-500 transition-all duration-75 group-hover:scale-110 group-active:scale-95"
+            >
+              <path
+                d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"
+              ></path>
+              <path d="M12 12v9"></path>
+              <path d="m16 16-4-4-4 4"></path>
+            </svg>
+            <p class="mt-2 text-center text-sm text-gray-500">
+              Drag and drop or click to upload.
+            </p>
+          </div>
+        </div>
+        <!-- hidden form -->
+        <form
+          id="uploadForm"
+          enctype="multipart/form-data"
+          class="grid gap-6 bg-gray-50 my-10 px-4 py-8 md:px-16"
+          style="display: none"
+        >
+          <!-- <input type="file" id="uploadFormInput" class="button-6" name="files"> -->
+          <input
+            type="file"
+            id="uploadFormInput"
+            class="button-6"
+            name="files"
+            multiple
+          />
+          <input
+            type="submit"
+            class="group mx-auto mt-6 flex-col max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-black px-5 py-2 text-sm text-white transition-colors hover:bg-white hover:text-black"
+            value="Upload Image Files"
+          />
+        </form>
+
+        <!--  -->
+        <h2 class="mt-10 mb-2 text-2xl">2. Uploaded Images:</h2>
+        <h5 class="mb-10 text-sm">
+          - <b>Drag and drop</b> frames to change order.
+        </h5>
+        <div
+          id="imageRow"
+          class="grid grid-cols-2 md:grid-cols-4 gap-2 bg-stone-100 border"
+        ></div>
+
+        <!-- output -->
+        <h2 class="mt-12 text-2xl">3. GIF Setting:</h2>
+        <p class="options text-sm">
+          <b>Resolution & Speed:</b>
+          <span class="resolution-input my-2">
+            <label for="width">Width: </label>
+            <input
+              class="mx-2 rounded-md"
+              type="number"
+              id="width"
+              name="width"
+              min="10"
+              max="1000"
+              placeholder="Enter width"
+              value="500"
+            />px, <label for="height">Height: </label>
+            <input
+              class="mx-2 rounded-md"
+              type="number"
+              id="height"
+              name="height"
+              min="10"
+              max="1000"
+              placeholder="Enter height"
+              value="500"
+            />px
+          </span>
+          <label for="time">Speed: </label>
+          <input
+            class="mx-2 rounded-md"
+            type="number"
+            id="time"
+            name="time"
+            min="10"
+            max="5000"
+            placeholder="Enter height"
+            value="500"
+          />
+          ms delay.
+          <span class="text-xs"> (500ms is equivalent to 0.5 seconds)</span>
+        </p>
+        <p class="options text-sm">
+          <b>Resize:</b>
+          <span class="radio-group" style="padding: 5px">
+            <label
+              ><input type="radio" name="option" value="fit" checked /> Fit all
+              images in the resolution.</label
+            >
+            <label
+              ><input type="radio" name="option" value="crop" /> Center crop all
+              images to smallest image size.</label
+            >
+          </span>
+        </p>
+
+        <button id="makeagif" class="button-36 mt-2 px-8">Make a GIF</button>
+        <button id="previewGif" class="button-36 mt-10" style="display: none">
+          Fit all images to the resolution
+        </button>
+        <button
+          id="previewCropGif"
+          class="button-36 mt-10"
+          style="display: none"
+        >
+          Center crop all images to smallest image size
+        </button>
+
+        <h2 class="mt-12 text-2xl">Animated GIF:</h2>
+        <div id="gifContainer" class="mt-2 outputarea rounded-md"></div>
+        <!-- <div id="gifContainer" class="grid grid-cols-2 md:grid-cols-3 gap-4 bg-whtite"></div> -->
+        <div id="outputinfo" class="p-4 font-sans"></div>
+        <button id="downloadAsGif" class="button-36 mt-2" style="display: none">
+          Download GIF
+        </button>
+
+        <!-- description -->
+
+        <div class="txt">
+          <h1><b>Free Animated GIF maker</b></h1>
+          <br />
+          <p>
+            GIF maker allows you to instantly create your animated GIFs by
+            combining separated image files as frames.
+          </p>
+          <p>
+            Produced GIFs are of high quality and free of watermarks or
+            attribution, making this tool ideal for developers and content
+            creators.
+          </p>
+          <p>
+            <br />To make a GIF, you can upload a sequence of JPG, PNG, BMP,
+            TIFF, HEIC, AVIF, and other types of images, and even mix different
+            formats and sizes - they will be converted automatically.
+          </p>
+          <h1 class="my-2"><br /><b>How to make a GIF?</b></h1>
+          <p>
+            Press the "upload image" area and select the images you want to use
+            as frames.
+          </p>
+          <br />
+          <p>
+            You can press and hold the ctrl/command key to select multiple
+            files.
+          </p>
+          <br />
+          <p>
+            When the images are uploaded, you can adjust animation speed and
+            frame order before making the GIF.
+          </p>
+
+          <br />
+          <h1><b>Tips for GIF creation</b></h1>
+          <br />
+          <p>
+            You can control the speed for the whole GIF by setting a "Delay
+            time" at the bottom.
+          </p>
+          <br />
+          <p>
+            Delay is in 1/1000 of a second between frames - a larger value
+            causes the animation to appear slower.
+          </p>
+          <br />
+          <p>
+            It's not advisable to set delay time lower than 10 because some
+            browsers will ignore such values and default to slower animation
+            speed.
+          </p>
+          <br />
+          <p>
+            By default, all frames will be sorted in uploading order, you can
+            drag and drop them inside the GIF animator area to rearrange.
+          </p>
+          <br />
+          <p>
+            If you upload images of different sizes, two options will appear:
+            automatically resizing and cropping all images to match the smallest
+            dimensions, or choosing the output dimensions and fitting them with
+            the original aspect ratio in the specified dimension.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuid.min.js"></script>
+    <script src="Animated_GIF.js"></script>
+    <script src="main.js"></script>
+    <!-- declaration -->
+    <div style="text-align: center; padding: 1cm">
+      <p class="text-sm">Copyright © 2023 GifByMe. All Rights Reserved.</p>
+    </div>
+  </body>
+</html>
