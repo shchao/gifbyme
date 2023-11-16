@@ -24,5 +24,8 @@
     "node",
     "glitch",
     "express"
-  ]
+  ],
+  "devDependencies": {
+    "tailwindcss": "^3.3.5"
+  }
 }

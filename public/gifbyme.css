@@ -1,7 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 #imageRow {
   display: flex;
   flex-wrap: wrap;
 }
+
 #imageRow img {
   width: 200px;
   height: 200px;
@@ -62,7 +67,6 @@ margin: auto;
   min-height: 120px;
   position:relative;
   border: 2px dashed #000;
-  /* background-image: url("https://cdn4.iconfinder.com/data/icons/multimedia-75/512/multimedia-38-512.png"); */
   background-image: url(data:image/svg+xml;base64,PCEtLSBzYW1wbGUgcmVjdGFuZ2xlIC0tPgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgY2xhc3M9InNjYWxlLTEwMCBoLTcgdy03IHRleHQtZ3JheS01MDAgdHJhbnNpdGlvbi1hbGwgZHVyYXRpb24tNzUgZ3JvdXAtaG92ZXI6c2NhbGUtMTEwIGdyb3VwLWFjdGl2ZTpzY2FsZS05NSI+PHBhdGggZD0iTTQgMTQuODk5QTcgNyAwIDEgMSAxNS43MSA4aDEuNzlhNC41IDQuNSAwIDAgMSAyLjUgOC4yNDIiPjwvcGF0aD48cGF0aCBkPSJNMTIgMTJ2OSI+PC9wYXRoPjxwYXRoIGQ9Im0xNiAxNi00LTQtNCA0Ij48L3BhdGg+PC9zdmc+);
   background-position: center;
   background-repeat: no-repeat;
@@ -255,10 +259,34 @@ font-size: 90%;
 font-weight: 700;
 }
 @media all and (max-width: 800px) {
-#sidebar {
+  #sidebar {
+    display: none;
+  }
+  #main {
+    margin: 0;
+  }
+}
+
+/*  */
+#uploadModal {
   display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 9999;
 }
-#main {
-  margin: 0;
-}
+.disable-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 9998;
+  display: none;
 }
