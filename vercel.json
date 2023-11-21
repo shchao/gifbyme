@@ -13,11 +13,15 @@
   "routes": [
     {
         "src": "/((?!.*\\.\\w+$).*)",
-        "dest": "/server.js"
+        "dest": "server.js"
     },
     {
-    "src": "/(.+\\.[a-z]+)$",
-    "dest": "/public/$1"
+        "src": "/(.+\\.[a-z]+)$",
+        "dest": "/public/$1"
     }
-  ]
+  ],
+  "crons": [{
+    "path": "/api/cron",
+    "schedule": "*/10 * * * *"
+  }]
 }
