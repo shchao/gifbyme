@@ -1,6 +1,9 @@
 import { response } from "express";
 
 export default async function handler(request, response) {
+    if (req.headers.get('Authorization') !== `Bearer ${process.env.CRON_SECRET}`) {
+      return res.status(401).end('Unauthorized');
+    }
     const result = await fetch(
       'http://worldtimeapi.org/api/timezone/America/Chicago',
     );
